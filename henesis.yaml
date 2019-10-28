@@ -1,0 +1,27 @@
+version: v1
+name: sample
+
+blockchain:
+  platform: ethereum
+  network: mainnet
+  threshold: 12 # optional.
+                # Ethereum: (default: 12, min: 6)
+                # Klaytn: (default: 0, min: 0)
+
+filters:
+  contracts:
+    - address: '0x'
+      path: ./contracts/example.sol
+      name: example
+      compilerVersion: 0.5.8
+
+provider:
+  type: webSocket
+  timeout: 10000 # optional. (default: 10000, unit: ms)
+# if you want to use webhook, you need to place it
+#  type: webhook
+#  url: https://localhost:8080
+#  method: POST
+#  headers:
+#    Authorization: 'Bearer YOUR-OWN-TOKEN'
+
